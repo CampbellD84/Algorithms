@@ -11,7 +11,7 @@ def helper_funct(old_res, games_amt, total_res):
         # append old result to total result of permutations
         total_res.append(old_res)
         return old_res
-    # recursive calls
+    # recursive calls for rock, paper and scissors
     helper_funct(old_res + ['rock'], games_amt-1, total_res)
     helper_funct(old_res + ['paper'], games_amt-1, total_res)
     helper_funct(old_res + ['scissors'], games_amt-1, total_res)
