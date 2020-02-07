@@ -2,18 +2,19 @@
 
 import sys
 
+# denominations = [1, 5, 10, 25, 50]
+
 
 def making_change(amount, denominations):
-    denominations = [1, 5, 10, 25, 50]
     # Base Case 1
     if amount == 0:
         return 1
     # Base Case 2
-    if amount == 1:
-        return 1
-
-    # create a cache
-    cache = [0] * amount
+    elif amount < 0 or not denominations:
+        return 0
+    else:
+        coin = denominations[-1]
+        return sum(making_change(amt, denominations[:-1]) for amt in range(amount, -1, -coin))
 
 
 if __name__ == "__main__":
